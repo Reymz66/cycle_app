@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../domain/cycle_phase.dart';
 import '../phase_content.dart';
+import 'notify_partner_button.dart';
 
 class CyclePhaseCard extends StatelessWidget {
   const CyclePhaseCard({
@@ -43,12 +44,17 @@ class CyclePhaseCard extends StatelessWidget {
                 for (final tag in content.tags) Chip(label: Text(tag)),
               ],
             ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: FilledButton.tonal(
-                onPressed: onLogSymptoms,
-                child: Text(loc.howDoYouFeelButton),
-              ),
+            Wrap(
+              alignment: WrapAlignment.end,
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                NotifyPartnerButton(phase: phase),
+                FilledButton.tonal(
+                  onPressed: onLogSymptoms,
+                  child: Text(loc.howDoYouFeelButton),
+                ),
+              ],
             ),
           ],
         ),

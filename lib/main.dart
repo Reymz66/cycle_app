@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import 'app.dart';
+import 'core/locale/locale_providers.dart';
+import 'core/locale/locale_repository.dart';
 import 'features/cycle/data/cycle_entry_model.dart';
 import 'features/cycle/data/cycle_repository.dart';
 import 'features/cycle/data/symptom_log_model.dart';
@@ -23,6 +25,7 @@ void main() async {
   final repository = await CycleRepository.open();
   final symptomRepository = await SymptomRepository.open();
   final profileRepository = await UserProfileRepository.open();
+  final localeRepository = await LocaleRepository.open();
 
   runApp(
     ProviderScope(
@@ -30,6 +33,7 @@ void main() async {
         cycleRepositoryProvider.overrideWithValue(repository),
         symptomRepositoryProvider.overrideWithValue(symptomRepository),
         userProfileRepositoryProvider.overrideWithValue(profileRepository),
+        localeRepositoryProvider.overrideWithValue(localeRepository),
       ],
       child: const CycleApp(),
     ),

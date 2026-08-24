@@ -121,12 +121,12 @@
   "profileNameLabel": "Nom",
   "profileAgeLabel": "Âge",
   "profileWeightLabel": "Poids (lb)",
-  "profilePartnerPhoneLabel": "Numéro de ton/ta partenaire",
   "profileSavedMessage": "Profil enregistré",
+  "profileLanguageLabel": "Langue",
+  "languageFrench": "Français",
+  "languageEnglish": "English",
 
-  "notifyPartnerButton": "Prévenir mon/ma partenaire",
   "notifyPartnerMessengerButton": "Prévenir via Messenger",
-  "notifyPartnerMissingNumber": "Ajoute d'abord le numéro de ton/ta partenaire dans ton profil.",
   "partnerMessageTemplate": "Salut, je suis en phase {phase} aujourd'hui.",
   "@partnerMessageTemplate": {
     "placeholders": {

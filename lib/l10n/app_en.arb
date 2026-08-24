@@ -77,11 +77,11 @@
   "profileNameLabel": "Name",
   "profileAgeLabel": "Age",
   "profileWeightLabel": "Weight (lbs)",
-  "profilePartnerPhoneLabel": "Partner's phone number",
   "profileSavedMessage": "Profile saved",
+  "profileLanguageLabel": "Language",
+  "languageFrench": "Français",
+  "languageEnglish": "English",
 
-  "notifyPartnerButton": "Notify my partner",
   "notifyPartnerMessengerButton": "Notify via Messenger",
-  "notifyPartnerMissingNumber": "Add your partner's phone number in your profile first.",
   "partnerMessageTemplate": "Hey, I'm in my {phase} phase today."
 }

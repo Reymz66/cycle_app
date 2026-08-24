@@ -13,7 +13,6 @@ import 'widgets/cycle_calendar.dart';
 import 'widgets/cycle_legend.dart';
 import 'widgets/cycle_phase_card.dart';
 import 'widgets/cycle_summary_card.dart';
-import 'widgets/notify_partner_button.dart';
 import 'widgets/symptom_log_sheet.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -63,11 +62,6 @@ class HomeScreen extends ConsumerWidget {
                   phase: phase,
                   onLogSymptoms: () =>
                       showSymptomLogSheet(context, date: DateTime.now()),
-                ),
-              if (phase != null)
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: NotifyPartnerButton(phase: phase),
                 ),
               if (entries.isEmpty) _EmptyState(loc: loc),
               const CycleLegend(),

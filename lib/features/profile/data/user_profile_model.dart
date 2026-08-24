@@ -8,7 +8,6 @@ class UserProfile extends HiveObject {
     required this.name,
     this.age,
     this.weightLbs,
-    this.partnerPhoneNumber,
   });
 
   @HiveField(0)
@@ -19,7 +18,4 @@ class UserProfile extends HiveObject {
 
   @HiveField(2)
   final double? weightLbs;
-
-  @HiveField(3)
-  final String? partnerPhoneNumber;
 }

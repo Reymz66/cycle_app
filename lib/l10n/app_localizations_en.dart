@@ -239,20 +239,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileWeightLabel => 'Weight (lbs)';
 
   @override
-  String get profilePartnerPhoneLabel => 'Partner\'s phone number';
-
-  @override
   String get profileSavedMessage => 'Profile saved';
 
   @override
-  String get notifyPartnerButton => 'Notify my partner';
+  String get profileLanguageLabel => 'Language';
+
+  @override
+  String get languageFrench => 'Français';
+
+  @override
+  String get languageEnglish => 'English';
 
   @override
   String get notifyPartnerMessengerButton => 'Notify via Messenger';
-
-  @override
-  String get notifyPartnerMissingNumber =>
-      'Add your partner\'s phone number in your profile first.';
 
   @override
   String partnerMessageTemplate(String phase) {

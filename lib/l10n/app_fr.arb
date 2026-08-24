@@ -121,5 +121,17 @@
   "profileNameLabel": "Nom",
   "profileAgeLabel": "Âge",
   "profileWeightLabel": "Poids (lb)",
-  "profileSavedMessage": "Profil enregistré"
+  "profilePartnerPhoneLabel": "Numéro de ton/ta partenaire",
+  "profileSavedMessage": "Profil enregistré",
+
+  "notifyPartnerButton": "Prévenir mon/ma partenaire",
+  "notifyPartnerMissingNumber": "Ajoute d'abord le numéro de ton/ta partenaire dans ton profil.",
+  "partnerMessageTemplate": "Salut, je suis en phase {phase} aujourd'hui.",
+  "@partnerMessageTemplate": {
+    "placeholders": {
+      "phase": {
+        "type": "String"
+      }
+    }
+  }
 }

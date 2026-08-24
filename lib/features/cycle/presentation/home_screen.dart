@@ -13,6 +13,7 @@ import 'widgets/cycle_calendar.dart';
 import 'widgets/cycle_legend.dart';
 import 'widgets/cycle_phase_card.dart';
 import 'widgets/cycle_summary_card.dart';
+import 'widgets/notify_partner_button.dart';
 import 'widgets/symptom_log_sheet.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -27,6 +28,9 @@ class HomeScreen extends ConsumerWidget {
     final daysWithSymptomLog = {
       for (final log in symptomLogs) dateOnly(log.date),
     };
+    final phase = prediction == null
+        ? null
+        : currentPhase(DateTime.now(), entries, prediction);
 
     return Scaffold(
       appBar: AppBar(
@@ -54,11 +58,16 @@ class HomeScreen extends ConsumerWidget {
           child: Column(
             children: [
               if (prediction != null) CycleSummaryCard(prediction: prediction),
-              if (prediction != null)
+              if (phase != null)
                 CyclePhaseCard(
-                  phase: currentPhase(DateTime.now(), entries, prediction),
+                  phase: phase,
                   onLogSymptoms: () =>
                       showSymptomLogSheet(context, date: DateTime.now()),
+                ),
+              if (phase != null)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: NotifyPartnerButton(phase: phase),
                 ),
               if (entries.isEmpty) _EmptyState(loc: loc),
               const CycleLegend(),

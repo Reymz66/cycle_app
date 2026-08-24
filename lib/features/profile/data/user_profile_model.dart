@@ -4,7 +4,12 @@ part 'user_profile_model.g.dart';
 
 @HiveType(typeId: 2)
 class UserProfile extends HiveObject {
-  UserProfile({required this.name, this.age, this.weightLbs});
+  UserProfile({
+    required this.name,
+    this.age,
+    this.weightLbs,
+    this.partnerPhoneNumber,
+  });
 
   @HiveField(0)
   final String name;
@@ -14,4 +19,7 @@ class UserProfile extends HiveObject {
 
   @HiveField(2)
   final double? weightLbs;
+
+  @HiveField(3)
+  final String? partnerPhoneNumber;
 }

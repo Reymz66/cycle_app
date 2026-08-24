@@ -512,11 +512,35 @@ abstract class AppLocalizations {
   /// **'Poids (lb)'**
   String get profileWeightLabel;
 
+  /// No description provided for @profilePartnerPhoneLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Numéro de ton/ta partenaire'**
+  String get profilePartnerPhoneLabel;
+
   /// No description provided for @profileSavedMessage.
   ///
   /// In fr, this message translates to:
   /// **'Profil enregistré'**
   String get profileSavedMessage;
+
+  /// No description provided for @notifyPartnerButton.
+  ///
+  /// In fr, this message translates to:
+  /// **'Prévenir mon/ma partenaire'**
+  String get notifyPartnerButton;
+
+  /// No description provided for @notifyPartnerMissingNumber.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajoute d\'abord le numéro de ton/ta partenaire dans ton profil.'**
+  String get notifyPartnerMissingNumber;
+
+  /// No description provided for @partnerMessageTemplate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Salut, je suis en phase {phase} aujourd\'hui.'**
+  String partnerMessageTemplate(String phase);
 }
 
 class _AppLocalizationsDelegate

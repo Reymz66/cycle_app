@@ -16,6 +16,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
   late final TextEditingController _nameController;
   late final TextEditingController _ageController;
   late final TextEditingController _weightController;
+  late final TextEditingController _partnerPhoneController;
 
   @override
   void initState() {
@@ -28,6 +29,9 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     _weightController = TextEditingController(
       text: profile?.weightLbs?.toString() ?? '',
     );
+    _partnerPhoneController = TextEditingController(
+      text: profile?.partnerPhoneNumber ?? '',
+    );
   }
 
   @override
@@ -35,6 +39,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     _nameController.dispose();
     _ageController.dispose();
     _weightController.dispose();
+    _partnerPhoneController.dispose();
     super.dispose();
   }
 
@@ -68,6 +73,13 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                   decimal: true,
                 ),
               ),
+              TextField(
+                controller: _partnerPhoneController,
+                decoration: InputDecoration(
+                  labelText: loc.profilePartnerPhoneLabel,
+                ),
+                keyboardType: TextInputType.phone,
+              ),
               Align(
                 alignment: Alignment.centerRight,
                 child: FilledButton(
@@ -84,10 +96,12 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
 
   Future<void> _save() async {
     final loc = AppLocalizations.of(context)!;
+    final partnerPhone = _partnerPhoneController.text.trim();
     final profile = UserProfile(
       name: _nameController.text.trim(),
       age: int.tryParse(_ageController.text.trim()),
       weightLbs: double.tryParse(_weightController.text.trim()),
+      partnerPhoneNumber: partnerPhone.isEmpty ? null : partnerPhone,
     );
 
     await ref.read(userProfileProvider.notifier).save(profile);

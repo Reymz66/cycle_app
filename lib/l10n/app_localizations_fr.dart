@@ -239,5 +239,20 @@ class AppLocalizationsFr extends AppLocalizations {
   String get profileWeightLabel => 'Poids (lb)';
 
   @override
+  String get profilePartnerPhoneLabel => 'Numéro de ton/ta partenaire';
+
+  @override
   String get profileSavedMessage => 'Profil enregistré';
+
+  @override
+  String get notifyPartnerButton => 'Prévenir mon/ma partenaire';
+
+  @override
+  String get notifyPartnerMissingNumber =>
+      'Ajoute d\'abord le numéro de ton/ta partenaire dans ton profil.';
+
+  @override
+  String partnerMessageTemplate(String phase) {
+    return 'Salut, je suis en phase $phase aujourd\'hui.';
+  }
 }

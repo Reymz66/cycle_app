@@ -91,5 +91,35 @@
   "symptomNausea": "Nausées",
   "symptomFoodCravings": "Envies alimentaires",
   "symptomAnxiety": "Anxiété",
-  "symptomAcne": "Acné"
+  "symptomAcne": "Acné",
+
+  "historyOpenTooltip": "Historique des cycles",
+  "historyScreenTitle": "Historique des cycles",
+  "historyCycleLengthLabel": "Durée du cycle : {days} jours",
+  "@historyCycleLengthLabel": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "historyPeriodLengthLabel": "Durée des règles : {days} jours",
+  "@historyPeriodLengthLabel": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "historyOngoingLabel": "En cours",
+  "historyNoSymptomsLabel": "Aucun symptôme noté",
+  "historyEmptyTitle": "Aucun cycle enregistré",
+  "historyEmptyMessage": "Ajoute des règles depuis le calendrier pour voir ton historique ici.",
+
+  "profileOpenTooltip": "Profil",
+  "profileScreenTitle": "Profil",
+  "profileNameLabel": "Nom",
+  "profileAgeLabel": "Âge",
+  "profileWeightLabel": "Poids (lb)",
+  "profileSavedMessage": "Profil enregistré"
 }

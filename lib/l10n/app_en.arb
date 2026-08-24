@@ -61,5 +61,21 @@
   "symptomNausea": "Nausea",
   "symptomFoodCravings": "Food cravings",
   "symptomAnxiety": "Anxiety",
-  "symptomAcne": "Acne"
+  "symptomAcne": "Acne",
+
+  "historyOpenTooltip": "Cycle history",
+  "historyScreenTitle": "Cycle history",
+  "historyCycleLengthLabel": "Cycle length: {days} days",
+  "historyPeriodLengthLabel": "Period length: {days} days",
+  "historyOngoingLabel": "Ongoing",
+  "historyNoSymptomsLabel": "No symptoms logged",
+  "historyEmptyTitle": "No cycles logged yet",
+  "historyEmptyMessage": "Add a period from the calendar to see your history here.",
+
+  "profileOpenTooltip": "Profile",
+  "profileScreenTitle": "Profile",
+  "profileNameLabel": "Name",
+  "profileAgeLabel": "Age",
+  "profileWeightLabel": "Weight (lbs)",
+  "profileSavedMessage": "Profile saved"
 }

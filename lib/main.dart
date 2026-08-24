@@ -9,6 +9,9 @@ import 'features/cycle/data/symptom_log_model.dart';
 import 'features/cycle/data/symptom_repository.dart';
 import 'features/cycle/presentation/providers/cycle_providers.dart';
 import 'features/cycle/presentation/providers/symptom_providers.dart';
+import 'features/profile/data/user_profile_model.dart';
+import 'features/profile/data/user_profile_repository.dart';
+import 'features/profile/presentation/providers/profile_providers.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,14 +19,17 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(CycleEntryAdapter());
   Hive.registerAdapter(SymptomLogAdapter());
+  Hive.registerAdapter(UserProfileAdapter());
   final repository = await CycleRepository.open();
   final symptomRepository = await SymptomRepository.open();
+  final profileRepository = await UserProfileRepository.open();
 
   runApp(
     ProviderScope(
       overrides: [
         cycleRepositoryProvider.overrideWithValue(repository),
         symptomRepositoryProvider.overrideWithValue(symptomRepository),
+        userProfileRepositoryProvider.overrideWithValue(profileRepository),
       ],
       child: const CycleApp(),
     ),

@@ -433,6 +433,90 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Acné'**
   String get symptomAcne;
+
+  /// No description provided for @historyOpenTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Historique des cycles'**
+  String get historyOpenTooltip;
+
+  /// No description provided for @historyScreenTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Historique des cycles'**
+  String get historyScreenTitle;
+
+  /// No description provided for @historyCycleLengthLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Durée du cycle : {days} jours'**
+  String historyCycleLengthLabel(int days);
+
+  /// No description provided for @historyPeriodLengthLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Durée des règles : {days} jours'**
+  String historyPeriodLengthLabel(int days);
+
+  /// No description provided for @historyOngoingLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'En cours'**
+  String get historyOngoingLabel;
+
+  /// No description provided for @historyNoSymptomsLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun symptôme noté'**
+  String get historyNoSymptomsLabel;
+
+  /// No description provided for @historyEmptyTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun cycle enregistré'**
+  String get historyEmptyTitle;
+
+  /// No description provided for @historyEmptyMessage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajoute des règles depuis le calendrier pour voir ton historique ici.'**
+  String get historyEmptyMessage;
+
+  /// No description provided for @profileOpenTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Profil'**
+  String get profileOpenTooltip;
+
+  /// No description provided for @profileScreenTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Profil'**
+  String get profileScreenTitle;
+
+  /// No description provided for @profileNameLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom'**
+  String get profileNameLabel;
+
+  /// No description provided for @profileAgeLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Âge'**
+  String get profileAgeLabel;
+
+  /// No description provided for @profileWeightLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poids (lb)'**
+  String get profileWeightLabel;
+
+  /// No description provided for @profileSavedMessage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Profil enregistré'**
+  String get profileSavedMessage;
 }
 
 class _AppLocalizationsDelegate

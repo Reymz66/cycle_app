@@ -3,7 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/utils/date_utils.dart';
 import '../../../l10n/app_localizations.dart';
+import '../../profile/presentation/profile_screen.dart';
 import '../domain/cycle_phase.dart';
+import 'cycle_history_screen.dart';
 import 'providers/cycle_providers.dart';
 import 'providers/symptom_providers.dart';
 import 'widgets/add_entry_sheet.dart';
@@ -27,7 +29,25 @@ class HomeScreen extends ConsumerWidget {
     };
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.appTitle)),
+      appBar: AppBar(
+        title: Text(loc.appTitle),
+        actions: [
+          IconButton(
+            tooltip: loc.profileOpenTooltip,
+            icon: const Icon(Icons.person_outline),
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const ProfileScreen()),
+            ),
+          ),
+          IconButton(
+            tooltip: loc.historyOpenTooltip,
+            icon: const Icon(Icons.history),
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const CycleHistoryScreen()),
+            ),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.only(bottom: 96),

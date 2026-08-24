@@ -193,4 +193,51 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get symptomAcne => 'Acné';
+
+  @override
+  String get historyOpenTooltip => 'Historique des cycles';
+
+  @override
+  String get historyScreenTitle => 'Historique des cycles';
+
+  @override
+  String historyCycleLengthLabel(int days) {
+    return 'Durée du cycle : $days jours';
+  }
+
+  @override
+  String historyPeriodLengthLabel(int days) {
+    return 'Durée des règles : $days jours';
+  }
+
+  @override
+  String get historyOngoingLabel => 'En cours';
+
+  @override
+  String get historyNoSymptomsLabel => 'Aucun symptôme noté';
+
+  @override
+  String get historyEmptyTitle => 'Aucun cycle enregistré';
+
+  @override
+  String get historyEmptyMessage =>
+      'Ajoute des règles depuis le calendrier pour voir ton historique ici.';
+
+  @override
+  String get profileOpenTooltip => 'Profil';
+
+  @override
+  String get profileScreenTitle => 'Profil';
+
+  @override
+  String get profileNameLabel => 'Nom';
+
+  @override
+  String get profileAgeLabel => 'Âge';
+
+  @override
+  String get profileWeightLabel => 'Poids (lb)';
+
+  @override
+  String get profileSavedMessage => 'Profil enregistré';
 }

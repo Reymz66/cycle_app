@@ -30,6 +30,7 @@ class HomeScreen extends ConsumerWidget {
       appBar: AppBar(title: Text(loc.appTitle)),
       body: SafeArea(
         child: SingleChildScrollView(
+          padding: const EdgeInsets.only(bottom: 96),
           child: Column(
             children: [
               if (prediction != null) CycleSummaryCard(prediction: prediction),

@@ -530,6 +530,12 @@ abstract class AppLocalizations {
   /// **'Prévenir mon/ma partenaire'**
   String get notifyPartnerButton;
 
+  /// No description provided for @notifyPartnerMessengerButton.
+  ///
+  /// In fr, this message translates to:
+  /// **'Prévenir via Messenger'**
+  String get notifyPartnerMessengerButton;
+
   /// No description provided for @notifyPartnerMissingNumber.
   ///
   /// In fr, this message translates to:

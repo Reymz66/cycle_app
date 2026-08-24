@@ -125,6 +125,7 @@
   "profileSavedMessage": "Profil enregistré",
 
   "notifyPartnerButton": "Prévenir mon/ma partenaire",
+  "notifyPartnerMessengerButton": "Prévenir via Messenger",
   "notifyPartnerMissingNumber": "Ajoute d'abord le numéro de ton/ta partenaire dans ton profil.",
   "partnerMessageTemplate": "Salut, je suis en phase {phase} aujourd'hui.",
   "@partnerMessageTemplate": {

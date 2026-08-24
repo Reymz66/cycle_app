@@ -248,6 +248,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get notifyPartnerButton => 'Prévenir mon/ma partenaire';
 
   @override
+  String get notifyPartnerMessengerButton => 'Prévenir via Messenger';
+
+  @override
   String get notifyPartnerMissingNumber =>
       'Ajoute d\'abord le numéro de ton/ta partenaire dans ton profil.';
 

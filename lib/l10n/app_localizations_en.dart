@@ -248,6 +248,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notifyPartnerButton => 'Notify my partner';
 
   @override
+  String get notifyPartnerMessengerButton => 'Notify via Messenger';
+
+  @override
   String get notifyPartnerMissingNumber =>
       'Add your partner\'s phone number in your profile first.';
 

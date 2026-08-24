@@ -8,7 +8,10 @@ import '../../domain/symptom_type.dart';
 import '../providers/symptom_providers.dart';
 import '../symptom_labels.dart';
 
-Future<void> showSymptomLogSheet(BuildContext context, {required DateTime date}) {
+Future<void> showSymptomLogSheet(
+  BuildContext context, {
+  required DateTime date,
+}) {
   return showModalBottomSheet(
     context: context,
     isScrollControlled: true,
@@ -33,8 +36,9 @@ class _SymptomLogSheetState extends ConsumerState<SymptomLogSheet> {
   @override
   void initState() {
     super.initState();
-    _existingLog =
-        ref.read(symptomLogsProvider.notifier).entryForDay(widget.date);
+    _existingLog = ref
+        .read(symptomLogsProvider.notifier)
+        .entryForDay(widget.date);
     _selected = {
       for (final key in _existingLog?.symptomKeys ?? const <String>[])
         SymptomType.values.byName(key),
@@ -54,73 +58,72 @@ class _SymptomLogSheetState extends ConsumerState<SymptomLogSheet> {
     final locale = Localizations.localeOf(context).toString();
     final dateFormat = DateFormat.yMMMd(locale);
 
-    return Padding(
-      padding: EdgeInsets.only(
-        left: 16,
-        right: 16,
-        top: 16,
-        bottom: MediaQuery.of(context).viewInsets.bottom + 16,
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 12,
-        children: [
-          Text(
-            loc.symptomSheetTitle,
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          Text(dateFormat.format(widget.date)),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              for (final type in SymptomType.values)
-                FilterChip(
-                  label: Text('${type.emoji} ${symptomLabel(type, loc)}'),
-                  selected: _selected.contains(type),
-                  onSelected: (selected) {
-                    setState(() {
-                      if (selected) {
-                        _selected.add(type);
-                      } else {
-                        _selected.remove(type);
-                      }
-                    });
-                  },
-                ),
-            ],
-          ),
-          TextField(
-            controller: _noteController,
-            decoration: InputDecoration(labelText: loc.symptomNoteLabel),
-            minLines: 1,
-            maxLines: 3,
-          ),
-          Row(
-            children: [
-              if (_existingLog != null)
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: 16,
+          right: 16,
+          top: 16,
+          bottom: MediaQuery.of(context).viewInsets.bottom + 16,
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 12,
+          children: [
+            Text(
+              loc.symptomSheetTitle,
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            Text(dateFormat.format(widget.date)),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                for (final type in SymptomType.values)
+                  FilterChip(
+                    label: Text('${type.emoji} ${symptomLabel(type, loc)}'),
+                    selected: _selected.contains(type),
+                    onSelected: (selected) {
+                      setState(() {
+                        if (selected) {
+                          _selected.add(type);
+                        } else {
+                          _selected.remove(type);
+                        }
+                      });
+                    },
+                  ),
+              ],
+            ),
+            TextField(
+              controller: _noteController,
+              decoration: InputDecoration(labelText: loc.symptomNoteLabel),
+              minLines: 1,
+              maxLines: 3,
+            ),
+            Row(
+              children: [
+                if (_existingLog != null)
+                  TextButton(
+                    onPressed: () async {
+                      await ref
+                          .read(symptomLogsProvider.notifier)
+                          .delete(_existingLog!.id);
+                      if (context.mounted) Navigator.of(context).pop();
+                    },
+                    child: Text(loc.deleteButton),
+                  ),
+                const Spacer(),
                 TextButton(
-                  onPressed: () async {
-                    await ref
-                        .read(symptomLogsProvider.notifier)
-                        .delete(_existingLog!.id);
-                    if (context.mounted) Navigator.of(context).pop();
-                  },
-                  child: Text(loc.deleteButton),
+                  onPressed: () => Navigator.of(context).pop(),
+                  child: Text(loc.cancelButton),
                 ),
-              const Spacer(),
-              TextButton(
-                onPressed: () => Navigator.of(context).pop(),
-                child: Text(loc.cancelButton),
-              ),
-              FilledButton(
-                onPressed: _save,
-                child: Text(loc.saveButton),
-              ),
-            ],
-          ),
-        ],
+                FilledButton(onPressed: _save, child: Text(loc.saveButton)),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -29,19 +29,19 @@ class HomeScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: Text(loc.appTitle)),
       body: SafeArea(
-        child: Column(
-          children: [
-            if (prediction != null) CycleSummaryCard(prediction: prediction),
-            if (prediction != null)
-              CyclePhaseCard(
-                phase: currentPhase(DateTime.now(), entries, prediction),
-                onLogSymptoms: () =>
-                    showSymptomLogSheet(context, date: DateTime.now()),
-              ),
-            if (entries.isEmpty) _EmptyState(loc: loc),
-            const CycleLegend(),
-            Expanded(
-              child: CycleCalendar(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              if (prediction != null) CycleSummaryCard(prediction: prediction),
+              if (prediction != null)
+                CyclePhaseCard(
+                  phase: currentPhase(DateTime.now(), entries, prediction),
+                  onLogSymptoms: () =>
+                      showSymptomLogSheet(context, date: DateTime.now()),
+                ),
+              if (entries.isEmpty) _EmptyState(loc: loc),
+              const CycleLegend(),
+              CycleCalendar(
                 entries: entries,
                 prediction: prediction,
                 daysWithSymptomLog: daysWithSymptomLog,
@@ -49,8 +49,8 @@ class HomeScreen extends ConsumerWidget {
                 onDayLongPressed: (day) =>
                     showSymptomLogSheet(context, date: day),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(

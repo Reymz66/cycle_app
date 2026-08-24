@@ -14,10 +14,8 @@ Future<void> showAddEntrySheet(
   return showModalBottomSheet(
     context: context,
     isScrollControlled: true,
-    builder: (context) => AddEntrySheet(
-      initialDate: initialDate,
-      existingEntry: existingEntry,
-    ),
+    builder: (context) =>
+        AddEntrySheet(initialDate: initialDate, existingEntry: existingEntry),
   );
 }
 
@@ -53,62 +51,64 @@ class _AddEntrySheetState extends ConsumerState<AddEntrySheet> {
     final dateFormat = DateFormat.yMMMd(locale);
     final isEditing = widget.existingEntry != null;
 
-    return Padding(
-      padding: EdgeInsets.only(
-        left: 16,
-        right: 16,
-        top: 16,
-        bottom: MediaQuery.of(context).viewInsets.bottom + 16,
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 12,
-        children: [
-          Text(
-            isEditing ? loc.editEntryTitle : loc.addEntryTitle,
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          ListTile(
-            contentPadding: EdgeInsets.zero,
-            title: Text(loc.startDateLabel),
-            trailing: Text(dateFormat.format(_startDate)),
-            onTap: () => _pickStartDate(context),
-          ),
-          ListTile(
-            contentPadding: EdgeInsets.zero,
-            title: Text(loc.endDateLabel),
-            trailing: Text(
-              _endDate != null
-                  ? dateFormat.format(_endDate!)
-                  : loc.endDateOngoingHint,
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: 16,
+          right: 16,
+          top: 16,
+          bottom: MediaQuery.of(context).viewInsets.bottom + 16,
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 12,
+          children: [
+            Text(
+              isEditing ? loc.editEntryTitle : loc.addEntryTitle,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
-            onTap: () => _pickEndDate(context),
-          ),
-          Row(
-            children: [
-              if (isEditing)
+            ListTile(
+              contentPadding: EdgeInsets.zero,
+              title: Text(loc.startDateLabel),
+              trailing: Text(dateFormat.format(_startDate)),
+              onTap: () => _pickStartDate(context),
+            ),
+            ListTile(
+              contentPadding: EdgeInsets.zero,
+              title: Text(loc.endDateLabel),
+              trailing: Text(
+                _endDate != null
+                    ? dateFormat.format(_endDate!)
+                    : loc.endDateOngoingHint,
+              ),
+              onTap: () => _pickEndDate(context),
+            ),
+            Row(
+              children: [
+                if (isEditing)
+                  TextButton(
+                    onPressed: () async {
+                      await ref
+                          .read(cycleEntriesProvider.notifier)
+                          .delete(widget.existingEntry!.id);
+                      if (context.mounted) Navigator.of(context).pop();
+                    },
+                    child: Text(loc.deleteButton),
+                  ),
+                const Spacer(),
                 TextButton(
-                  onPressed: () async {
-                    await ref
-                        .read(cycleEntriesProvider.notifier)
-                        .delete(widget.existingEntry!.id);
-                    if (context.mounted) Navigator.of(context).pop();
-                  },
-                  child: Text(loc.deleteButton),
+                  onPressed: () => Navigator.of(context).pop(),
+                  child: Text(loc.cancelButton),
                 ),
-              const Spacer(),
-              TextButton(
-                onPressed: () => Navigator.of(context).pop(),
-                child: Text(loc.cancelButton),
-              ),
-              FilledButton(
-                onPressed: () => _save(context, loc),
-                child: Text(loc.saveButton),
-              ),
-            ],
-          ),
-        ],
+                FilledButton(
+                  onPressed: () => _save(context, loc),
+                  child: Text(loc.saveButton),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -135,14 +135,16 @@ class _AddEntrySheetState extends ConsumerState<AddEntrySheet> {
 
   Future<void> _save(BuildContext context, AppLocalizations loc) async {
     if (_endDate != null && _endDate!.isBefore(_startDate)) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(loc.errorEndBeforeStart)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(loc.errorEndBeforeStart)));
       return;
     }
 
     final entry = CycleEntry(
-      id: widget.existingEntry?.id ?? DateTime.now().microsecondsSinceEpoch.toString(),
+      id:
+          widget.existingEntry?.id ??
+          DateTime.now().microsecondsSinceEpoch.toString(),
       startDate: _startDate,
       endDate: _endDate,
     );

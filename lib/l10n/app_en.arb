@@ -1,0 +1,23 @@
+{
+  "@@locale": "en",
+  "appTitle": "Cycle App",
+  "summaryNextPeriodToday": "Period expected today",
+  "summaryNextPeriodIn": "{days, plural, =1{Period in 1 day} other{Period in {days} days}}",
+  "summaryOvulationEstimated": "Ovulation estimated on {date}",
+  "summaryFertileWindow": "Fertile window: {start} to {end}",
+  "legendPeriod": "Period",
+  "legendPredictedPeriod": "Predicted period",
+  "legendFertileWindow": "Fertile window",
+  "legendOvulation": "Ovulation",
+  "addEntryTitle": "Add period",
+  "editEntryTitle": "Edit period",
+  "startDateLabel": "Start date",
+  "endDateLabel": "End date (optional)",
+  "endDateOngoingHint": "Still ongoing",
+  "saveButton": "Save",
+  "cancelButton": "Cancel",
+  "deleteButton": "Delete",
+  "emptyStateTitle": "No data yet",
+  "emptyStateMessage": "Tap a date on the calendar to log the start of your next period.",
+  "errorEndBeforeStart": "The end date must be after the start date."
+}

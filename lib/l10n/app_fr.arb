@@ -1,0 +1,53 @@
+{
+  "@@locale": "fr",
+  "appTitle": "Cycle App",
+  "@appTitle": {
+    "description": "Nom de l'application affiché dans la barre de titre"
+  },
+  "summaryNextPeriodToday": "Règles attendues aujourd'hui",
+  "summaryNextPeriodIn": "{days, plural, =1{Règles dans 1 jour} other{Règles dans {days} jours}}",
+  "@summaryNextPeriodIn": {
+    "description": "Nombre de jours avant les prochaines règles estimées",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "summaryOvulationEstimated": "Ovulation estimée le {date}",
+  "@summaryOvulationEstimated": {
+    "description": "Date d'ovulation estimée",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "summaryFertileWindow": "Fenêtre de fertilité : du {start} au {end}",
+  "@summaryFertileWindow": {
+    "description": "Plage de la fenêtre de fertilité estimée",
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "legendPeriod": "Règles",
+  "legendPredictedPeriod": "Règles prédites",
+  "legendFertileWindow": "Fenêtre de fertilité",
+  "legendOvulation": "Ovulation",
+  "addEntryTitle": "Ajouter des règles",
+  "editEntryTitle": "Modifier les règles",
+  "startDateLabel": "Date de début",
+  "endDateLabel": "Date de fin (optionnel)",
+  "endDateOngoingHint": "Toujours en cours",
+  "saveButton": "Enregistrer",
+  "cancelButton": "Annuler",
+  "deleteButton": "Supprimer",
+  "emptyStateTitle": "Aucune donnée pour l'instant",
+  "emptyStateMessage": "Appuie sur une date dans le calendrier pour enregistrer le début de tes prochaines règles.",
+  "errorEndBeforeStart": "La date de fin doit être après la date de début."
+}

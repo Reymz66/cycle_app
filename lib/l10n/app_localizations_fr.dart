@@ -81,4 +81,116 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get errorEndBeforeStart =>
       'La date de fin doit être après la date de début.';
+
+  @override
+  String get phaseMenstrualName => 'Règles';
+
+  @override
+  String get phaseMenstrualDescription =>
+      'Ton corps élimine la muqueuse utérine. L\'énergie est souvent basse.';
+
+  @override
+  String get phaseMenstrualTag1 => 'Fatigue';
+
+  @override
+  String get phaseMenstrualTag2 => 'Crampes';
+
+  @override
+  String get phaseMenstrualTag3 => 'Envie de ralentir';
+
+  @override
+  String get phaseFollicularName => 'Folliculaire';
+
+  @override
+  String get phaseFollicularDescription =>
+      'Les hormones remontent, l\'énergie et la motivation augmentent progressivement.';
+
+  @override
+  String get phaseFollicularTag1 => 'Énergie croissante';
+
+  @override
+  String get phaseFollicularTag2 => 'Humeur stable';
+
+  @override
+  String get phaseFollicularTag3 => 'Créativité';
+
+  @override
+  String get phaseOvulatoryName => 'Ovulatoire';
+
+  @override
+  String get phaseOvulatoryDescription =>
+      'Pic d\'œstrogènes autour de l\'ovulation : souvent le pic d\'énergie et de confiance du cycle.';
+
+  @override
+  String get phaseOvulatoryTag1 => 'Haute énergie';
+
+  @override
+  String get phaseOvulatoryTag2 => 'Confiance';
+
+  @override
+  String get phaseOvulatoryTag3 => 'Libido accrue';
+
+  @override
+  String get phaseLutealName => 'Lutéale';
+
+  @override
+  String get phaseLutealDescription =>
+      'La progestérone augmente puis chute : le syndrome prémenstruel peut apparaître en fin de phase.';
+
+  @override
+  String get phaseLutealTag1 => 'Sautes d\'humeur';
+
+  @override
+  String get phaseLutealTag2 => 'Ballonnements';
+
+  @override
+  String get phaseLutealTag3 => 'Besoin de calme';
+
+  @override
+  String get expectedFeelingsLabel => 'Ressentis typiques';
+
+  @override
+  String get howDoYouFeelButton => 'Comment tu te sens aujourd\'hui ?';
+
+  @override
+  String get symptomSheetTitle => 'Comment tu te sens aujourd\'hui ?';
+
+  @override
+  String get symptomNoteLabel => 'Note (optionnel)';
+
+  @override
+  String get symptomCramps => 'Crampes';
+
+  @override
+  String get symptomFatigue => 'Fatigue';
+
+  @override
+  String get symptomMoodSwings => 'Sautes d\'humeur';
+
+  @override
+  String get symptomHeadache => 'Maux de tête';
+
+  @override
+  String get symptomBloating => 'Ballonnements';
+
+  @override
+  String get symptomTenderBreasts => 'Seins sensibles';
+
+  @override
+  String get symptomIncreasedEnergy => 'Regain d\'énergie';
+
+  @override
+  String get symptomBackPain => 'Douleurs dorsales';
+
+  @override
+  String get symptomNausea => 'Nausées';
+
+  @override
+  String get symptomFoodCravings => 'Envies alimentaires';
+
+  @override
+  String get symptomAnxiety => 'Anxiété';
+
+  @override
+  String get symptomAcne => 'Acné';
 }

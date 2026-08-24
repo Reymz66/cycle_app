@@ -19,5 +19,47 @@
   "deleteButton": "Delete",
   "emptyStateTitle": "No data yet",
   "emptyStateMessage": "Tap a date on the calendar to log the start of your next period.",
-  "errorEndBeforeStart": "The end date must be after the start date."
+  "errorEndBeforeStart": "The end date must be after the start date.",
+
+  "phaseMenstrualName": "Menstrual",
+  "phaseMenstrualDescription": "Your body sheds the uterine lining. Energy is often low.",
+  "phaseMenstrualTag1": "Fatigue",
+  "phaseMenstrualTag2": "Cramps",
+  "phaseMenstrualTag3": "Craving rest",
+
+  "phaseFollicularName": "Follicular",
+  "phaseFollicularDescription": "Hormones rise again, energy and motivation gradually increase.",
+  "phaseFollicularTag1": "Rising energy",
+  "phaseFollicularTag2": "Stable mood",
+  "phaseFollicularTag3": "Creativity",
+
+  "phaseOvulatoryName": "Ovulatory",
+  "phaseOvulatoryDescription": "Estrogen peaks around ovulation — often the energy and confidence peak of the cycle.",
+  "phaseOvulatoryTag1": "High energy",
+  "phaseOvulatoryTag2": "Confidence",
+  "phaseOvulatoryTag3": "Increased libido",
+
+  "phaseLutealName": "Luteal",
+  "phaseLutealDescription": "Progesterone rises then drops: PMS can appear late in this phase.",
+  "phaseLutealTag1": "Mood swings",
+  "phaseLutealTag2": "Bloating",
+  "phaseLutealTag3": "Need for calm",
+
+  "expectedFeelingsLabel": "Typical feelings",
+  "howDoYouFeelButton": "How are you feeling today?",
+  "symptomSheetTitle": "How are you feeling today?",
+  "symptomNoteLabel": "Note (optional)",
+
+  "symptomCramps": "Cramps",
+  "symptomFatigue": "Fatigue",
+  "symptomMoodSwings": "Mood swings",
+  "symptomHeadache": "Headache",
+  "symptomBloating": "Bloating",
+  "symptomTenderBreasts": "Tender breasts",
+  "symptomIncreasedEnergy": "Increased energy",
+  "symptomBackPain": "Back pain",
+  "symptomNausea": "Nausea",
+  "symptomFoodCravings": "Food cravings",
+  "symptomAnxiety": "Anxiety",
+  "symptomAcne": "Acne"
 }

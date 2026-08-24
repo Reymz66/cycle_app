@@ -48,11 +48,15 @@ class CycleCalendar extends StatefulWidget {
     required this.entries,
     required this.prediction,
     required this.onDaySelected,
+    required this.onDayLongPressed,
+    required this.daysWithSymptomLog,
   });
 
   final List<CycleEntry> entries;
   final CyclePrediction? prediction;
   final void Function(DateTime day) onDaySelected;
+  final void Function(DateTime day) onDayLongPressed;
+  final Set<DateTime> daysWithSymptomLog;
 
   @override
   State<CycleCalendar> createState() => _CycleCalendarState();
@@ -76,6 +80,8 @@ class _CycleCalendarState extends State<CycleCalendar> {
         });
         widget.onDaySelected(selectedDay);
       },
+      onDayLongPressed: (selectedDay, focusedDay) =>
+          widget.onDayLongPressed(selectedDay),
       onPageChanged: (focusedDay) => _focusedDay = focusedDay,
       calendarBuilders: CalendarBuilders(
         defaultBuilder: (context, day, focusedDay) =>
@@ -105,6 +111,8 @@ class _CycleCalendarState extends State<CycleCalendar> {
     final bool useLightText = category == DayCategory.period ||
         category == DayCategory.ovulation ||
         category == DayCategory.fertileWindow;
+    final bool hasSymptomLog =
+        widget.daysWithSymptomLog.contains(dateOnly(day));
 
     return Container(
       margin: const EdgeInsets.all(4),
@@ -119,12 +127,31 @@ class _CycleCalendarState extends State<CycleCalendar> {
             : null,
       ),
       alignment: Alignment.center,
-      child: Text(
-        '${day.day}',
-        style: TextStyle(
-          color: useLightText ? Colors.white : null,
-          fontWeight: isToday ? FontWeight.bold : null,
-        ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Text(
+            '${day.day}',
+            style: TextStyle(
+              color: useLightText ? Colors.white : null,
+              fontWeight: isToday ? FontWeight.bold : null,
+            ),
+          ),
+          if (hasSymptomLog)
+            Positioned(
+              bottom: 2,
+              child: Container(
+                width: 4,
+                height: 4,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: useLightText
+                      ? Colors.white
+                      : Theme.of(context).colorScheme.primary,
+                ),
+              ),
+            ),
+        ],
       ),
     );
   }

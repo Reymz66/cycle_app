@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/utils/date_utils.dart';
 import '../../../l10n/app_localizations.dart';
+import '../domain/cycle_phase.dart';
 import 'providers/cycle_providers.dart';
+import 'providers/symptom_providers.dart';
 import 'widgets/add_entry_sheet.dart';
 import 'widgets/cycle_calendar.dart';
 import 'widgets/cycle_legend.dart';
+import 'widgets/cycle_phase_card.dart';
 import 'widgets/cycle_summary_card.dart';
+import 'widgets/symptom_log_sheet.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -16,6 +21,10 @@ class HomeScreen extends ConsumerWidget {
     final loc = AppLocalizations.of(context)!;
     final entries = ref.watch(cycleEntriesProvider);
     final prediction = ref.watch(cyclePredictionProvider);
+    final symptomLogs = ref.watch(symptomLogsProvider);
+    final daysWithSymptomLog = {
+      for (final log in symptomLogs) dateOnly(log.date),
+    };
 
     return Scaffold(
       appBar: AppBar(title: Text(loc.appTitle)),
@@ -23,13 +32,22 @@ class HomeScreen extends ConsumerWidget {
         child: Column(
           children: [
             if (prediction != null) CycleSummaryCard(prediction: prediction),
+            if (prediction != null)
+              CyclePhaseCard(
+                phase: currentPhase(DateTime.now(), entries, prediction),
+                onLogSymptoms: () =>
+                    showSymptomLogSheet(context, date: DateTime.now()),
+              ),
             if (entries.isEmpty) _EmptyState(loc: loc),
             const CycleLegend(),
             Expanded(
               child: CycleCalendar(
                 entries: entries,
                 prediction: prediction,
+                daysWithSymptomLog: daysWithSymptomLog,
                 onDaySelected: (day) => _onDaySelected(context, ref, day),
+                onDayLongPressed: (day) =>
+                    showSymptomLogSheet(context, date: day),
               ),
             ),
           ],

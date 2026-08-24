@@ -1,7 +1,10 @@
 import 'package:cycle_app/app.dart';
 import 'package:cycle_app/features/cycle/data/cycle_entry_model.dart';
 import 'package:cycle_app/features/cycle/data/cycle_repository.dart';
+import 'package:cycle_app/features/cycle/data/symptom_log_model.dart';
+import 'package:cycle_app/features/cycle/data/symptom_repository.dart';
 import 'package:cycle_app/features/cycle/presentation/providers/cycle_providers.dart';
+import 'package:cycle_app/features/cycle/presentation/providers/symptom_providers.dart';
 import 'package:cycle_app/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -19,6 +22,17 @@ class _FakeCycleRepository implements CycleRepository {
   List<CycleEntry> getAllSortedByStartDate() => [];
 }
 
+class _FakeSymptomRepository implements SymptomRepository {
+  @override
+  Future<void> delete(String id) async {}
+
+  @override
+  Future<void> upsert(SymptomLog log) async {}
+
+  @override
+  List<SymptomLog> getAll() => [];
+}
+
 void main() {
   testWidgets('shows the empty state and legend on first launch',
       (tester) async {
@@ -26,6 +40,8 @@ void main() {
       ProviderScope(
         overrides: [
           cycleRepositoryProvider.overrideWithValue(_FakeCycleRepository()),
+          symptomRepositoryProvider
+              .overrideWithValue(_FakeSymptomRepository()),
         ],
         child: const CycleApp(),
       ),

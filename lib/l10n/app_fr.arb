@@ -49,5 +49,47 @@
   "deleteButton": "Supprimer",
   "emptyStateTitle": "Aucune donnée pour l'instant",
   "emptyStateMessage": "Appuie sur une date dans le calendrier pour enregistrer le début de tes prochaines règles.",
-  "errorEndBeforeStart": "La date de fin doit être après la date de début."
+  "errorEndBeforeStart": "La date de fin doit être après la date de début.",
+
+  "phaseMenstrualName": "Règles",
+  "phaseMenstrualDescription": "Ton corps élimine la muqueuse utérine. L'énergie est souvent basse.",
+  "phaseMenstrualTag1": "Fatigue",
+  "phaseMenstrualTag2": "Crampes",
+  "phaseMenstrualTag3": "Envie de ralentir",
+
+  "phaseFollicularName": "Folliculaire",
+  "phaseFollicularDescription": "Les hormones remontent, l'énergie et la motivation augmentent progressivement.",
+  "phaseFollicularTag1": "Énergie croissante",
+  "phaseFollicularTag2": "Humeur stable",
+  "phaseFollicularTag3": "Créativité",
+
+  "phaseOvulatoryName": "Ovulatoire",
+  "phaseOvulatoryDescription": "Pic d'œstrogènes autour de l'ovulation : souvent le pic d'énergie et de confiance du cycle.",
+  "phaseOvulatoryTag1": "Haute énergie",
+  "phaseOvulatoryTag2": "Confiance",
+  "phaseOvulatoryTag3": "Libido accrue",
+
+  "phaseLutealName": "Lutéale",
+  "phaseLutealDescription": "La progestérone augmente puis chute : le syndrome prémenstruel peut apparaître en fin de phase.",
+  "phaseLutealTag1": "Sautes d'humeur",
+  "phaseLutealTag2": "Ballonnements",
+  "phaseLutealTag3": "Besoin de calme",
+
+  "expectedFeelingsLabel": "Ressentis typiques",
+  "howDoYouFeelButton": "Comment tu te sens aujourd'hui ?",
+  "symptomSheetTitle": "Comment tu te sens aujourd'hui ?",
+  "symptomNoteLabel": "Note (optionnel)",
+
+  "symptomCramps": "Crampes",
+  "symptomFatigue": "Fatigue",
+  "symptomMoodSwings": "Sautes d'humeur",
+  "symptomHeadache": "Maux de tête",
+  "symptomBloating": "Ballonnements",
+  "symptomTenderBreasts": "Seins sensibles",
+  "symptomIncreasedEnergy": "Regain d'énergie",
+  "symptomBackPain": "Douleurs dorsales",
+  "symptomNausea": "Nausées",
+  "symptomFoodCravings": "Envies alimentaires",
+  "symptomAnxiety": "Anxiété",
+  "symptomAcne": "Acné"
 }

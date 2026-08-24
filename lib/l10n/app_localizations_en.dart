@@ -81,4 +81,116 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get errorEndBeforeStart =>
       'The end date must be after the start date.';
+
+  @override
+  String get phaseMenstrualName => 'Menstrual';
+
+  @override
+  String get phaseMenstrualDescription =>
+      'Your body sheds the uterine lining. Energy is often low.';
+
+  @override
+  String get phaseMenstrualTag1 => 'Fatigue';
+
+  @override
+  String get phaseMenstrualTag2 => 'Cramps';
+
+  @override
+  String get phaseMenstrualTag3 => 'Craving rest';
+
+  @override
+  String get phaseFollicularName => 'Follicular';
+
+  @override
+  String get phaseFollicularDescription =>
+      'Hormones rise again, energy and motivation gradually increase.';
+
+  @override
+  String get phaseFollicularTag1 => 'Rising energy';
+
+  @override
+  String get phaseFollicularTag2 => 'Stable mood';
+
+  @override
+  String get phaseFollicularTag3 => 'Creativity';
+
+  @override
+  String get phaseOvulatoryName => 'Ovulatory';
+
+  @override
+  String get phaseOvulatoryDescription =>
+      'Estrogen peaks around ovulation — often the energy and confidence peak of the cycle.';
+
+  @override
+  String get phaseOvulatoryTag1 => 'High energy';
+
+  @override
+  String get phaseOvulatoryTag2 => 'Confidence';
+
+  @override
+  String get phaseOvulatoryTag3 => 'Increased libido';
+
+  @override
+  String get phaseLutealName => 'Luteal';
+
+  @override
+  String get phaseLutealDescription =>
+      'Progesterone rises then drops: PMS can appear late in this phase.';
+
+  @override
+  String get phaseLutealTag1 => 'Mood swings';
+
+  @override
+  String get phaseLutealTag2 => 'Bloating';
+
+  @override
+  String get phaseLutealTag3 => 'Need for calm';
+
+  @override
+  String get expectedFeelingsLabel => 'Typical feelings';
+
+  @override
+  String get howDoYouFeelButton => 'How are you feeling today?';
+
+  @override
+  String get symptomSheetTitle => 'How are you feeling today?';
+
+  @override
+  String get symptomNoteLabel => 'Note (optional)';
+
+  @override
+  String get symptomCramps => 'Cramps';
+
+  @override
+  String get symptomFatigue => 'Fatigue';
+
+  @override
+  String get symptomMoodSwings => 'Mood swings';
+
+  @override
+  String get symptomHeadache => 'Headache';
+
+  @override
+  String get symptomBloating => 'Bloating';
+
+  @override
+  String get symptomTenderBreasts => 'Tender breasts';
+
+  @override
+  String get symptomIncreasedEnergy => 'Increased energy';
+
+  @override
+  String get symptomBackPain => 'Back pain';
+
+  @override
+  String get symptomNausea => 'Nausea';
+
+  @override
+  String get symptomFoodCravings => 'Food cravings';
+
+  @override
+  String get symptomAnxiety => 'Anxiety';
+
+  @override
+  String get symptomAcne => 'Acne';
 }

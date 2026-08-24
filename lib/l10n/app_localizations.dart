@@ -217,6 +217,222 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'La date de fin doit être après la date de début.'**
   String get errorEndBeforeStart;
+
+  /// No description provided for @phaseMenstrualName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Règles'**
+  String get phaseMenstrualName;
+
+  /// No description provided for @phaseMenstrualDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ton corps élimine la muqueuse utérine. L\'énergie est souvent basse.'**
+  String get phaseMenstrualDescription;
+
+  /// No description provided for @phaseMenstrualTag1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fatigue'**
+  String get phaseMenstrualTag1;
+
+  /// No description provided for @phaseMenstrualTag2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Crampes'**
+  String get phaseMenstrualTag2;
+
+  /// No description provided for @phaseMenstrualTag3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Envie de ralentir'**
+  String get phaseMenstrualTag3;
+
+  /// No description provided for @phaseFollicularName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Folliculaire'**
+  String get phaseFollicularName;
+
+  /// No description provided for @phaseFollicularDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Les hormones remontent, l\'énergie et la motivation augmentent progressivement.'**
+  String get phaseFollicularDescription;
+
+  /// No description provided for @phaseFollicularTag1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Énergie croissante'**
+  String get phaseFollicularTag1;
+
+  /// No description provided for @phaseFollicularTag2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Humeur stable'**
+  String get phaseFollicularTag2;
+
+  /// No description provided for @phaseFollicularTag3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Créativité'**
+  String get phaseFollicularTag3;
+
+  /// No description provided for @phaseOvulatoryName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ovulatoire'**
+  String get phaseOvulatoryName;
+
+  /// No description provided for @phaseOvulatoryDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pic d\'œstrogènes autour de l\'ovulation : souvent le pic d\'énergie et de confiance du cycle.'**
+  String get phaseOvulatoryDescription;
+
+  /// No description provided for @phaseOvulatoryTag1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Haute énergie'**
+  String get phaseOvulatoryTag1;
+
+  /// No description provided for @phaseOvulatoryTag2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Confiance'**
+  String get phaseOvulatoryTag2;
+
+  /// No description provided for @phaseOvulatoryTag3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Libido accrue'**
+  String get phaseOvulatoryTag3;
+
+  /// No description provided for @phaseLutealName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lutéale'**
+  String get phaseLutealName;
+
+  /// No description provided for @phaseLutealDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'La progestérone augmente puis chute : le syndrome prémenstruel peut apparaître en fin de phase.'**
+  String get phaseLutealDescription;
+
+  /// No description provided for @phaseLutealTag1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sautes d\'humeur'**
+  String get phaseLutealTag1;
+
+  /// No description provided for @phaseLutealTag2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ballonnements'**
+  String get phaseLutealTag2;
+
+  /// No description provided for @phaseLutealTag3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Besoin de calme'**
+  String get phaseLutealTag3;
+
+  /// No description provided for @expectedFeelingsLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ressentis typiques'**
+  String get expectedFeelingsLabel;
+
+  /// No description provided for @howDoYouFeelButton.
+  ///
+  /// In fr, this message translates to:
+  /// **'Comment tu te sens aujourd\'hui ?'**
+  String get howDoYouFeelButton;
+
+  /// No description provided for @symptomSheetTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Comment tu te sens aujourd\'hui ?'**
+  String get symptomSheetTitle;
+
+  /// No description provided for @symptomNoteLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Note (optionnel)'**
+  String get symptomNoteLabel;
+
+  /// No description provided for @symptomCramps.
+  ///
+  /// In fr, this message translates to:
+  /// **'Crampes'**
+  String get symptomCramps;
+
+  /// No description provided for @symptomFatigue.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fatigue'**
+  String get symptomFatigue;
+
+  /// No description provided for @symptomMoodSwings.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sautes d\'humeur'**
+  String get symptomMoodSwings;
+
+  /// No description provided for @symptomHeadache.
+  ///
+  /// In fr, this message translates to:
+  /// **'Maux de tête'**
+  String get symptomHeadache;
+
+  /// No description provided for @symptomBloating.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ballonnements'**
+  String get symptomBloating;
+
+  /// No description provided for @symptomTenderBreasts.
+  ///
+  /// In fr, this message translates to:
+  /// **'Seins sensibles'**
+  String get symptomTenderBreasts;
+
+  /// No description provided for @symptomIncreasedEnergy.
+  ///
+  /// In fr, this message translates to:
+  /// **'Regain d\'énergie'**
+  String get symptomIncreasedEnergy;
+
+  /// No description provided for @symptomBackPain.
+  ///
+  /// In fr, this message translates to:
+  /// **'Douleurs dorsales'**
+  String get symptomBackPain;
+
+  /// No description provided for @symptomNausea.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nausées'**
+  String get symptomNausea;
+
+  /// No description provided for @symptomFoodCravings.
+  ///
+  /// In fr, this message translates to:
+  /// **'Envies alimentaires'**
+  String get symptomFoodCravings;
+
+  /// No description provided for @symptomAnxiety.
+  ///
+  /// In fr, this message translates to:
+  /// **'Anxiété'**
+  String get symptomAnxiety;
+
+  /// No description provided for @symptomAcne.
+  ///
+  /// In fr, this message translates to:
+  /// **'Acné'**
+  String get symptomAcne;
 }
 
 class _AppLocalizationsDelegate
